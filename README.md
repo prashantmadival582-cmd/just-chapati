@@ -1,16 +1,118 @@
-# React + Vite
+# 🍽️ Just Chapati
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern and responsive food website built using **React.js, JavaScript, HTML, and CSS**.
 
-Currently, two official plugins are available:
+The project is designed as a beginner-friendly React application to practice core React concepts such as components, props, state, event handling, conditional rendering, reusable components, and data rendering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Just Chapati** is a food website that showcases traditional Indian food products such as:
 
-## Expanding the Oxlint configuration
+- Chapati
+- Palak Chapati
+- Methi Chapati
+- Ajwain Chapati
+- Beetroot Chapati
+- Coin Parotta
+- Sanna
+- Poori
+- Wheat Kuboos
+- Idiyappam
+- Kerala Porotta
+- Neer Dosa
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## ✨ Features
+
+- Responsive navigation bar
+- Hero section with video
+- About section
+- Product listing
+- Product category filtering
+- Product cards
+- Add to Cart functionality
+- Dynamic cart count
+- Why Choose Us section
+- Promotional banner
+- Food blog section
+- Contact form
+- Responsive design for different screen sizes
+- Reusable React components
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js**
+- **JavaScript**
+- **HTML**
+- **CSS**
+- **Vite**
+- **Git & GitHub**
+
+---
+
+## 📚 React Concepts Practiced
+
+This project was created to practice beginner React concepts:
+
+- Components
+- Reusable Components
+- Custom Components
+- Import and Export
+- Props
+- Destructuring Props
+- `useState`
+- Event Handling
+- Conditional Rendering
+- `.map()`
+- `.filter()`
+- Form Handling
+- Passing Functions as Props
+- Component Composition
+- Responsive CSS
+
+---
+
+## 📁 Project Structure
+
+```text
+just-chapati2/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── Blog.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── Products.jsx
+│   │   ├── PromoBanner.jsx
+│   │   └── WhyChooseUs.jsx
+│   │
+│   ├── data/
+│   │   └── products.js
+│   │
+│   ├── pages/
+│   │   └── Home.jsx
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
