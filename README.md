@@ -1,8 +1,10 @@
 # 🍽️ Just Chapati
 
-A modern and responsive food website built using **React.js, JavaScript, HTML, and CSS**.
+A modern, responsive food website built using **React.js, JavaScript, HTML, and CSS**.
 
-The project is designed as a beginner-friendly React application to practice core React concepts such as components, props, state, event handling, conditional rendering, reusable components, and data rendering.
+**Just Chapati** is a beginner-friendly React project created to practice core React concepts while building a realistic food ordering and showcase website.
+
+The website presents traditional Indian food products with a clean, modern and responsive user interface.
 
 ---
 
@@ -27,92 +29,82 @@ The project is designed as a beginner-friendly React application to practice cor
 
 ## ✨ Features
 
-- Responsive navigation bar
-- Hero section with video
+### 🏠 Home Page
+
+- Modern hero section
+- Food-focused visual design
+- Order Now button
+- Explore More button
+- Trust information section
 - About section
-- Product listing
-- Product category filtering
-- Product cards
-- Add to Cart functionality
-- Dynamic cart count
+- Products section
 - Why Choose Us section
 - Promotional banner
 - Food blog section
-- Contact form
-- Responsive design for different screen sizes
-- Reusable React components
+- Contact section
+- Footer
+
+### 🔍 Search
+
+- Search button in the navigation bar
+- Expandable search area
+- Search input with placeholder
+- Search suggestions
+- Clear search button
+- Search submit functionality
+
+Example placeholder:
+
+> Search your favourite taste...
 
 ---
 
-## 🛠️ Technologies Used
+### 🛍️ Products
 
-- **React.js**
-- **JavaScript**
-- **HTML**
-- **CSS**
-- **Vite**
-- **Git & GitHub**
+- Product listing
+- Reusable product cards
+- Product images
+- Product categories
+- Product prices
+- Product ratings
+- Category filtering
+- Add to Cart button
+- Dynamic cart count
 
----
+### 📂 Product Categories
 
-## 📚 React Concepts Practiced
+Products can be filtered by:
 
-This project was created to practice beginner React concepts:
-
-- Components
-- Reusable Components
-- Custom Components
-- Import and Export
-- Props
-- Destructuring Props
-- `useState`
-- Event Handling
-- Conditional Rendering
-- `.map()`
-- `.filter()`
-- Form Handling
-- Passing Functions as Props
-- Component Composition
-- Responsive CSS
+- All
+- Chapati
+- Parotta
+- Sanna
+- Poori
+- Kuboos
+- Idiyappam
+- Dosa
 
 ---
 
-## 📁 Project Structure
+### 📄 Dedicated Pages
+
+The project now uses **React Router** to create separate pages.
+
+Available pages:
+
+- Home
+- Products
+- About
+- Why Us
+- Blog
+- Contact
+
+Routes include:
 
 ```text
-just-chapati2/
-│
-├── public/
-│
-├── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   ├── About.jsx
-│   │   ├── Blog.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── ProductCard.jsx
-│   │   ├── Products.jsx
-│   │   ├── PromoBanner.jsx
-│   │   └── WhyChooseUs.jsx
-│   │
-│   ├── data/
-│   │   └── products.js
-│   │
-│   ├── pages/
-│   │   └── Home.jsx
-│   │
-│   ├── App.jsx
-│   ├── App.css
-│   ├── index.css
-│   └── main.jsx
-│
-├── .gitignore
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-└── README.md
+/
+ /products
+ /about
+ /why-us
+ /blog
+ /contact
