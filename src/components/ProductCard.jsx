@@ -1,5 +1,11 @@
 function ProductCard({ product, onAddToCart }) {
-  const { name, category, price, rating, image } = product;
+  const {
+    name,
+    category,
+    price,
+    rating,
+    image,
+  } = product;
 
   return (
     <div className="product-card">
@@ -9,6 +15,7 @@ function ProductCard({ product, onAddToCart }) {
         <img
           src={image}
           alt={name}
+          loading="lazy"
         />
 
         <span className="product-category">
@@ -18,7 +25,9 @@ function ProductCard({ product, onAddToCart }) {
 
       {/* Product Information */}
       <div className="product-info">
-        <h3>{name}</h3>
+        <h3>
+          {name}
+        </h3>
 
         {/* Rating */}
         <div className="product-rating">

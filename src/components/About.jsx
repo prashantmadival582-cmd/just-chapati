@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import aboutImage from "../assets/about-chapati.png";
 
 function About() {
@@ -6,14 +7,16 @@ function About() {
       <div className="container about-container">
 
         {/* About Image */}
-        <div className="about-image">
+        <div className="about-image reveal-left">
           <img
             src={aboutImage}
             alt="Fresh traditional Indian food"
+            loading="lazy"
           />
 
           <div className="experience-card">
             <strong>100%</strong>
+
             <span>
               Homemade
               <br />
@@ -23,8 +26,10 @@ function About() {
         </div>
 
         {/* About Content */}
-        <div className="about-content">
-          <span className="section-label">OUR STORY</span>
+        <div className="about-content reveal-right">
+          <span className="section-label">
+            OUR STORY
+          </span>
 
           <h2>
             The Taste of Home,
@@ -44,9 +49,9 @@ function About() {
             to quality.
           </p>
 
-          <a href="#contact" className="text-btn">
+          <Link to="/contact" className="text-btn">
             Discover Our Story →
-          </a>
+          </Link>
         </div>
 
       </div>

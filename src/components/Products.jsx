@@ -27,8 +27,10 @@ function Products({ onAddToCart }) {
     <section className="products-section" id="products">
 
       {/* Section Heading */}
-      <div className="section-heading">
-        <p className="section-label">OUR MENU</p>
+      <div className="section-heading reveal">
+        <p className="section-label">
+          OUR MENU
+        </p>
 
         <h2>
           Fresh & Delicious <span>Products</span>
@@ -41,7 +43,7 @@ function Products({ onAddToCart }) {
       </div>
 
       {/* Category Filter */}
-      <div className="product-filters">
+      <div className="product-filters reveal">
         {categories.map((category) => (
           <button
             type="button"
@@ -61,11 +63,15 @@ function Products({ onAddToCart }) {
       {/* Product Cards */}
       <div className="products-grid">
         {filteredProducts.map((product) => (
-          <ProductCard
+          <div
+            className="stagger-item"
             key={product.id}
-            product={product}
-            onAddToCart={onAddToCart}
-          />
+          >
+            <ProductCard
+              product={product}
+              onAddToCart={onAddToCart}
+            />
+          </div>
         ))}
       </div>
 

@@ -27,7 +27,7 @@ function WhyChooseUs() {
       <div className="container">
 
         {/* Section Heading */}
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <p className="section-label">
             WHY JUST CHAPATI
           </p>
@@ -47,20 +47,25 @@ function WhyChooseUs() {
         {/* Reasons */}
         <div className="why-grid">
           {reasons.map((reason) => (
-            <div className="why-card" key={reason.number}>
-
+            <div
+              className="why-card stagger-item"
+              key={reason.number}
+            >
               <div className="why-icon">
                 {reason.number}
               </div>
 
-              <h3>{reason.title}</h3>
+              <h3>
+                {reason.title}
+              </h3>
 
-              <p>{reason.text}</p>
+              <p>
+                {reason.text}
+              </p>
 
               <span className="reason-arrow">
                 ↗
               </span>
-
             </div>
           ))}
         </div>

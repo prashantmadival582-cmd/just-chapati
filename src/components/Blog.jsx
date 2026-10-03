@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import ricePathiriBlog from "../assets/rice-pathiri-blog.jpg";
 import kuboosBlog from "../assets/kuboos-blog.webp";
 import pooriBlog from "../assets/poori-blog.jpg";
@@ -21,97 +23,116 @@ import idiyappamBlog from "../assets/idiyappam-blog.jpg";
 const blogs = [
   {
     id: 1,
-    title: "Rice Pathiri Bangalore – Soft, Authentic, and Comforting",
+    title:
+      "Rice Pathiri Bangalore – Soft, Authentic, and Comforting",
     image: ricePathiriBlog,
   },
   {
     id: 2,
-    title: "Kuboos Online Delivery – Tradition Meets Modern Convenience",
+    title:
+      "Kuboos Online Delivery – Tradition Meets Modern Convenience",
     image: kuboosBlog,
   },
   {
     id: 3,
-    title: "Frozen Poori Bangalore – Fresh, Convenient & Authentic Indian Taste",
+    title:
+      "Frozen Poori Bangalore – Fresh, Convenient & Authentic Indian Taste",
     image: pooriBlog,
   },
   {
     id: 4,
-    title: "Ragi Roti Bangalore – A Healthy and Traditional Flatbread Choice",
+    title:
+      "Ragi Roti Bangalore – A Healthy and Traditional Flatbread Choice",
     image: ragiRotiBlog,
   },
   {
     id: 5,
-    title: "Obbattu Home Delivery – Traditional Sweet Delight at Your Doorstep",
+    title:
+      "Obbattu Home Delivery – Traditional Sweet Delight at Your Doorstep",
     image: obbattuBlog,
   },
   {
     id: 6,
-    title: "Spinach Chapati Bangalore – Healthy, Fresh & Nutritious Everyday Roti",
+    title:
+      "Spinach Chapati Bangalore – Healthy, Fresh & Nutritious Everyday Roti",
     image: spinachChapatiBlog,
   },
   {
     id: 7,
-    title: "Gluten Free Bajra Roti – Fresh and Healthy Traditional Flatbread",
+    title:
+      "Gluten Free Bajra Roti – Fresh and Healthy Traditional Flatbread",
     image: bajraRotiBlog,
   },
   {
     id: 8,
-    title: "Best Malabar Pathiri Delivery for Traditional Homemade-Style Food",
+    title:
+      "Best Malabar Pathiri Delivery for Traditional Homemade-Style Food",
     image: malabarPathiriBlog,
   },
   {
     id: 9,
-    title: "Arabic Bread Bangalore – Fresh and Authentic Everyday Bread",
+    title:
+      "Arabic Bread Bangalore – Fresh and Authentic Everyday Bread",
     image: arabicBreadBlog,
   },
   {
     id: 10,
-    title: "Poori Dough Bangalore – Freshly Prepared Dough for Soft and Delicious Pooris",
+    title:
+      "Poori Dough Bangalore – Freshly Prepared Dough for Soft and Delicious Pooris",
     image: pooriDoughBlog,
   },
   {
     id: 11,
-    title: "Catering Services Bangalore – Fresh, Authentic, and Reliable Food Solutions",
+    title:
+      "Catering Services Bangalore – Fresh, Authentic, and Reliable Food Solutions",
     image: cateringBlog,
   },
   {
     id: 12,
-    title: "Jowar Roti Online – Healthy and Wholesome Traditional Food",
+    title:
+      "Jowar Roti Online – Healthy and Wholesome Traditional Food",
     image: jowarRotiBlog,
   },
   {
     id: 13,
-    title: "Homely Sweets at Your Doorstep – Traditional Sweet Delights",
+    title:
+      "Homely Sweets at Your Doorstep – Traditional Sweet Delights",
     image: sweetsBlog,
   },
   {
     id: 14,
-    title: "Sanna Online Delivery – Fresh, Soft & Authentic Taste at Your Doorstep",
+    title:
+      "Sanna Online Delivery – Fresh, Soft & Authentic Taste at Your Doorstep",
     image: sannaBlog,
   },
   {
     id: 15,
-    title: "Jowar Chapati Bangalore – Fresh, Wholesome & Perfect for Everyday Meals",
+    title:
+      "Jowar Chapati Bangalore – Fresh, Wholesome & Perfect for Everyday Meals",
     image: jowarChapatiBlog,
   },
   {
     id: 16,
-    title: "Ready to Eat Rumali Roti – Freshness, Convenience & Authentic Taste",
+    title:
+      "Ready to Eat Rumali Roti – Freshness, Convenience & Authentic Taste",
     image: rumaliRotiBlog,
   },
   {
     id: 17,
-    title: "Ready to Fry Poori Bangalore – Fresh, Convenient and Perfect for Every Meal",
+    title:
+      "Ready to Fry Poori Bangalore – Fresh, Convenient and Perfect for Every Meal",
     image: readyPooriBlog,
   },
   {
     id: 18,
-    title: "Ready to Cook Malabar Porotta – Soft, Flaky and Delicious Anytime",
+    title:
+      "Ready to Cook Malabar Porotta – Soft, Flaky and Delicious Anytime",
     image: malabarPorottaBlog,
   },
   {
     id: 19,
-    title: "Fresh, Soft, and Homemade Idiyappam Online Delivered to You",
+    title:
+      "Fresh, Soft, and Homemade Idiyappam Online Delivered to You",
     image: idiyappamBlog,
   },
 ];
@@ -119,28 +140,69 @@ const blogs = [
 function Blog() {
   return (
     <section className="blog-section" id="blog">
-      <div className="blog-header">
-        <h2>Blog</h2>
-      </div>
-
       <div className="container">
-        <div className="blog-list">
+
+        {/* Section Header */}
+        <div className="section-heading">
+          <span className="section-tag">OUR BLOG</span>
+
+          <h2>
+            Stories, Flavours &{" "}
+            <span>Traditions</span>
+          </h2>
+
+          <p>
+            Discover delicious food stories, traditional
+            recipes and everything behind the authentic
+            taste of Just Chapati.
+          </p>
+        </div>
+
+        {/* Blog Grid */}
+        <div className="blog-grid">
           {blogs.map((blog) => (
-            <article className="blog-item" key={blog.id}>
-              <div className="blog-item-image">
-                <img src={blog.image} alt={blog.title} />
+            <article
+              className="blog-card"
+              key={blog.id}
+            >
+              {/* Blog Image */}
+              <div className="blog-image">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                />
               </div>
 
-              <div className="blog-item-content">
+              {/* Blog Content */}
+              <div className="blog-content">
+
+                <span className="blog-category">
+                  FOOD • STORIES
+                </span>
+
                 <h3>{blog.title}</h3>
 
-                <a href="#contact" className="blog-read-btn">
+                <p>
+                  Discover the traditional taste,
+                  authentic flavours and story behind
+                  this delicious favourite from
+                  Just Chapati.
+                </p>
+
+                {/* IMPORTANT: React Router Link */}
+                <Link
+                  to={`/blog/${blog.id}`}
+                  className="blog-read-btn"
+                >
                   Read More
-                </a>
+                  <span>→</span>
+                </Link>
+
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,8 +1,10 @@
-import heroVideo from "../assets/justchapati-video.mp4";
+import { Link } from "react-router-dom";
+import chapatiImage from "../assets/chapati.webp";
 
 function Hero() {
   return (
     <section className="hero" id="home">
+
       {/* Decorative Shapes */}
       <div className="hero-shape shape-one"></div>
       <div className="hero-shape shape-two"></div>
@@ -10,7 +12,8 @@ function Hero() {
       <div className="container hero-container">
 
         {/* Hero Content */}
-        <div className="hero-content">
+        <div className="hero-content reveal-left">
+
           <div className="hero-label">
             <span></span>
             FRESH • HOMEMADE • DELICIOUS
@@ -28,14 +31,14 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <a href="#products" className="primary-btn">
+            <Link to="/products" className="primary-btn">
               Order Now
               <span>→</span>
-            </a>
+            </Link>
 
-            <a href="#about" className="secondary-btn">
+            <Link to="/about" className="secondary-btn">
               Explore More
-            </a>
+            </Link>
           </div>
 
           {/* Trust Information */}
@@ -59,22 +62,21 @@ function Hero() {
               <span>Style</span>
             </div>
           </div>
+
         </div>
 
-        {/* Hero Video */}
-        <div className="hero-image-wrapper">
-          <div className="hero-image-circle"></div>
+        {/* Hero Image */}
+        <div className="hero-image-wrapper reveal-right">
 
-          <video
-            className="hero-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="hero-image-backdrop"></div>
+
+          <div className="hero-image-frame">
+            <img
+              src={chapatiImage}
+              alt="Fresh homemade chapati"
+              className="hero-food-image"
+            />
+          </div>
 
           {/* Floating Card 1 */}
           <div className="floating-card card-one">
@@ -95,6 +97,7 @@ function Hero() {
               <small>With Love</small>
             </div>
           </div>
+
         </div>
 
       </div>

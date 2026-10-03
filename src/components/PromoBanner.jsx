@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function PromoBanner() {
   return (
     <section className="promo-section">
@@ -18,9 +20,9 @@ function PromoBanner() {
             Your favorite homemade-style food is just a few clicks away.
           </p>
 
-          <a href="#products" className="primary-btn promo-btn">
+          <Link to="/products" className="primary-btn promo-btn">
             Order Now →
-          </a>
+          </Link>
         </div>
 
       </div>
