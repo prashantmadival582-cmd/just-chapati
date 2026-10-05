@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ricePathiriBlog from "../assets/rice-pathiri-blog.jpg";
@@ -138,13 +139,45 @@ const blogs = [
 ];
 
 function Blog() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Number of blogs displayed on each page
+  const postsPerPage = 6;
+
+  // Calculate total pages
+  const totalPages = Math.ceil(blogs.length / postsPerPage);
+
+  // Calculate starting and ending indexes
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+
+  // Get blogs for current page
+  const currentBlogs = blogs.slice(startIndex, endIndex);
+
+  // Change page
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+
+    // Scroll back to top of blog section
+    document
+      .getElementById("blog")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  };
+
   return (
     <section className="blog-section" id="blog">
       <div className="container">
 
-        {/* Section Header */}
-        <div className="section-heading">
-          <span className="section-tag">OUR BLOG</span>
+        {/* ================= HEADER ================= */}
+
+        <div className="section-heading blog-section-heading">
+
+          <span className="section-tag">
+            OUR BLOG
+          </span>
 
           <h2>
             Stories, Flavours &{" "}
@@ -156,31 +189,49 @@ function Blog() {
             recipes and everything behind the authentic
             taste of Just Chapati.
           </p>
+
         </div>
 
-        {/* Blog Grid */}
+
+        {/* ================= BLOG GRID ================= */}
+
         <div className="blog-grid">
-          {blogs.map((blog) => (
+
+          {currentBlogs.map((blog) => (
             <article
               className="blog-card"
               key={blog.id}
             >
-              {/* Blog Image */}
-              <div className="blog-image">
+
+              {/* Image */}
+
+              <Link
+                to={`/blog/${blog.id}`}
+                className="blog-image"
+              >
                 <img
                   src={blog.image}
                   alt={blog.title}
+                  loading="lazy"
                 />
-              </div>
 
-              {/* Blog Content */}
+                <span className="blog-image-overlay">
+                  Read Article →
+                </span>
+              </Link>
+
+
+              {/* Content */}
+
               <div className="blog-content">
 
                 <span className="blog-category">
                   FOOD • STORIES
                 </span>
 
-                <h3>{blog.title}</h3>
+                <h3>
+                  {blog.title}
+                </h3>
 
                 <p>
                   Discover the traditional taste,
@@ -189,18 +240,94 @@ function Blog() {
                   Just Chapati.
                 </p>
 
-                {/* IMPORTANT: React Router Link */}
                 <Link
                   to={`/blog/${blog.id}`}
                   className="blog-read-btn"
                 >
-                  Read More
+                  Read Article
                   <span>→</span>
                 </Link>
 
               </div>
+
             </article>
           ))}
+
+        </div>
+
+
+        {/* ================= PAGINATION ================= */}
+
+        <div className="blog-pagination">
+
+          {/* Previous */}
+
+          <button
+            className="pagination-arrow"
+            onClick={() =>
+              handlePageChange(currentPage - 1)
+            }
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+          >
+            ←
+          </button>
+
+
+          {/* Page Numbers */}
+
+          <div className="pagination-numbers">
+
+            {Array.from(
+              { length: totalPages },
+              (_, index) => index + 1
+            ).map((page) => (
+              <button
+                key={page}
+                className={`pagination-number ${
+                  currentPage === page
+                    ? "active"
+                    : ""
+                }`}
+                onClick={() =>
+                  handlePageChange(page)
+                }
+              >
+                {page}
+              </button>
+            ))}
+
+          </div>
+
+
+          {/* Next */}
+
+          <button
+            className="pagination-arrow"
+            onClick={() =>
+              handlePageChange(currentPage + 1)
+            }
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+          >
+            →
+          </button>
+
+        </div>
+
+
+        {/* Page Information */}
+
+        <div className="pagination-info">
+          Showing{" "}
+          <strong>{startIndex + 1}</strong>
+          {" – "}
+          <strong>
+            {Math.min(endIndex, blogs.length)}
+          </strong>
+          {" of "}
+          <strong>{blogs.length}</strong>
+          {" stories"}
         </div>
 
       </div>

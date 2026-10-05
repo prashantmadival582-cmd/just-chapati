@@ -8,9 +8,8 @@ function ProductCard({ product, onAddToCart }) {
   } = product;
 
   return (
-    <div className="product-card">
+    <article className="product-card">
 
-      {/* Product Image */}
       <div className="product-image">
         <img
           src={image}
@@ -23,35 +22,51 @@ function ProductCard({ product, onAddToCart }) {
         </span>
       </div>
 
-      {/* Product Information */}
       <div className="product-info">
-        <h3>
-          {name}
-        </h3>
 
-        {/* Rating */}
-        <div className="product-rating">
-          <span>★</span>
-          <span>{rating}</span>
+        <div className="product-title-row">
+
+          <div>
+            <p className="product-type">
+              {category}
+            </p>
+
+            <h3>{name}</h3>
+          </div>
+
+          <div className="product-rating">
+            <span>★</span>
+            <span>{rating}</span>
+          </div>
+
         </div>
 
-        {/* Price and Cart Button */}
         <div className="product-bottom">
-          <p className="product-price">
-            ₹{price}
-          </p>
+
+          <div className="product-price-wrapper">
+            <span className="price-label">
+              Starting from
+            </span>
+
+            <p className="product-price">
+              ₹{price}
+            </p>
+          </div>
 
           <button
             type="button"
             className="add-cart-btn"
             onClick={() => onAddToCart(product)}
           >
-            Add to Cart
+            <span>+</span>
+            Add
           </button>
+
         </div>
+
       </div>
 
-    </div>
+    </article>
   );
 }
 

@@ -23,7 +23,6 @@ import readyPooriBlog from "../assets/ready-poori-blog.jpg";
 import malabarPorottaBlog from "../assets/malabar-porotta-blog.jpg";
 import idiyappamBlog from "../assets/idiyappam-blog.jpg";
 
-
 const blogs = [
   {
     id: 1,
@@ -139,7 +138,6 @@ const blogs = [
   },
 ];
 
-
 function BlogDetailPage() {
   const { id } = useParams();
 
@@ -147,7 +145,10 @@ function BlogDetailPage() {
     (item) => item.id === Number(id)
   );
 
-  // If blog doesn't exist
+  /* =========================================
+     BLOG NOT FOUND
+     ========================================= */
+
   if (!blog) {
     return (
       <>
@@ -155,13 +156,23 @@ function BlogDetailPage() {
 
         <main className="blog-not-found">
           <div className="container">
+            <span className="blog-not-found-icon">✦</span>
+
+            <p className="section-label">
+              JUST CHAPATI
+            </p>
+
             <h1>Blog Not Found</h1>
 
             <p>
-              Sorry, we couldn't find the blog you're looking for.
+              Sorry, we couldn't find the blog you're
+              looking for.
             </p>
 
-            <Link to="/blog" className="blog-back-btn">
+            <Link
+              to="/blog"
+              className="blog-back-btn"
+            >
               ← Back to Blogs
             </Link>
           </div>
@@ -172,14 +183,15 @@ function BlogDetailPage() {
     );
   }
 
-
   return (
     <>
-      <Navbar />
+      
 
       <main className="blog-detail-page">
 
-        {/* ================= HERO ================= */}
+        {/* =========================================
+            HERO
+            ========================================= */}
 
         <section className="blog-detail-hero">
 
@@ -189,125 +201,192 @@ function BlogDetailPage() {
               to="/blog"
               className="blog-back-link"
             >
-              ← Back to Blogs
+              <span>←</span>
+              Back to Blogs
             </Link>
 
-            <div className="blog-detail-category">
-              FOOD • STORIES
+            <div className="blog-detail-meta">
+              <span className="blog-detail-line"></span>
+
+              <span>
+                FOOD • STORIES
+              </span>
+
+              <span className="blog-detail-line"></span>
             </div>
 
-            <h1>{blog.title}</h1>
+            <h1>
+              {blog.title}
+            </h1>
 
             <p className="blog-detail-intro">
-              Discover the traditional taste, authentic
-              flavours and comforting food experience
-              behind this delicious favourite from
-              Just Chapati.
+              Discover the traditional taste,
+              authentic flavours and comforting
+              food experience behind this delicious
+              favourite from Just Chapati.
             </p>
+
+            <div className="blog-detail-scroll">
+              <span>SCROLL TO READ</span>
+              <span className="scroll-arrow">↓</span>
+            </div>
 
           </div>
 
         </section>
 
-
-        {/* ================= FEATURED IMAGE ================= */}
+        {/* =========================================
+            ARTICLE
+            ========================================= */}
 
         <section className="blog-detail-content">
 
           <div className="container">
 
+            {/* FEATURED IMAGE */}
+
             <div className="blog-detail-image">
+
               <img
                 src={blog.image}
                 alt={blog.title}
               />
+
+              <div className="blog-image-overlay">
+                <span>
+                  JUST CHAPATI
+                </span>
+              </div>
+
             </div>
 
+            {/* ARTICLE META */}
 
-            {/* ================= ARTICLE ================= */}
+            <div className="blog-reading-meta">
+
+              <div>
+                <span>ARTICLE</span>
+                <strong>Food Stories</strong>
+              </div>
+
+              <div>
+                <span>READ</span>
+                <strong>4 min</strong>
+              </div>
+
+              <div>
+                <span>BY</span>
+                <strong>Just Chapati</strong>
+              </div>
+
+            </div>
+
+            {/* ARTICLE */}
 
             <article className="blog-article">
 
               <p className="blog-article-lead">
-                At Just Chapati, we believe that good food
-                is more than just a meal. It is about
-                tradition, freshness, comfort and the
-                memories we create around the dining table.
+                At Just Chapati, we believe that good
+                food is more than just a meal. It is
+                about tradition, freshness, comfort and
+                the memories we create around the
+                dining table.
               </p>
+
+              <div className="article-divider"></div>
 
               <h2>
                 A Taste of Tradition
               </h2>
 
               <p>
-                Traditional Indian food has always been
-                loved for its authentic flavours and
-                simple ingredients. Every dish carries
-                its own story, preparation style and
-                connection to our food culture.
+                Traditional Indian food has always
+                been loved for its authentic flavours
+                and simple ingredients. Every dish
+                carries its own story, preparation
+                style and connection to our food
+                culture.
               </p>
 
               <p>
                 Our goal is to bring these familiar
                 flavours to your table with care,
-                freshness and convenience. Whether you
-                are enjoying a quick meal at home or
-                sharing food with family and friends,
-                every bite should feel special.
+                freshness and convenience. Whether
+                you are enjoying a quick meal at home
+                or sharing food with family and
+                friends, every bite should feel
+                special.
               </p>
+
+              <div className="article-highlight">
+                <span>✦</span>
+
+                <p>
+                  Traditional flavours,
+                  thoughtfully prepared for
+                  modern everyday living.
+                </p>
+              </div>
 
               <h2>
                 Freshness You Can Taste
               </h2>
 
               <p>
-                We focus on maintaining the quality and
-                authentic character of traditional food.
-                From preparation to delivery, freshness
-                remains an important part of the Just
-                Chapati experience.
+                We focus on maintaining the quality
+                and authentic character of traditional
+                food. From preparation to delivery,
+                freshness remains an important part
+                of the Just Chapati experience.
               </p>
 
               <p>
-                We bring together traditional recipes and
-                modern convenience so that you can enjoy
-                delicious food without compromising on
-                taste.
+                We bring together traditional recipes
+                and modern convenience so that you can
+                enjoy delicious food without
+                compromising on taste.
               </p>
 
             </article>
 
-
-            {/* ================= CTA ================= */}
+            {/* =========================================
+                CTA
+                ========================================= */}
 
             <div className="blog-detail-cta">
 
-              <div>
-                <span>
+              <div className="blog-cta-content">
+
+                <span className="blog-cta-label">
                   JUST CHAPATI
                 </span>
 
                 <h2>
-                  Ready to enjoy something delicious?
+                  Bring the taste of home
+                  <br />
+                  to your table.
                 </h2>
 
                 <p>
-                  Explore our fresh and authentic food
-                  collection.
+                  Explore our fresh and authentic
+                  collection of traditional favourites.
                 </p>
+
               </div>
 
               <Link
                 to="/products"
                 className="blog-order-btn"
               >
-                Order Now →
+                Explore Products
+                <span>→</span>
               </Link>
 
             </div>
 
-
-            {/* ================= BACK BUTTON ================= */}
+            {/* =========================================
+                BACK
+                ========================================= */}
 
             <div className="blog-detail-footer">
 
@@ -315,7 +394,8 @@ function BlogDetailPage() {
                 to="/blog"
                 className="blog-back-btn"
               >
-                ← Explore More Blogs
+                <span>←</span>
+                Explore More Blogs
               </Link>
 
             </div>
@@ -326,7 +406,7 @@ function BlogDetailPage() {
 
       </main>
 
-      <Footer />
+      
     </>
   );
 }

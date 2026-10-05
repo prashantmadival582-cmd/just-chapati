@@ -1,18 +1,13 @@
-import Navbar from "../components/Navbar";
 import Blog from "../components/Blog";
-import Footer from "../components/Footer";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function BlogPage() {
+  useScrollReveal();
+
   return (
-    <>
-      <Navbar />
-
-      <main className="blog-page">
-        <Blog />
-      </main>
-
-      <Footer />
-    </>
+    <main className="blog-page">
+      <Blog />
+    </main>
   );
 }
 
