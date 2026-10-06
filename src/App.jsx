@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
@@ -11,6 +12,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
+import Testimonials from "./pages/Testimonials";
 import ContactPage from "./pages/ContactPage";
 
 function App() {
@@ -149,6 +151,10 @@ function App() {
       {/* GLOBAL NAVBAR */}
       <Navbar cartCount={cartCount} />
 
+      {/* GLOBAL SCROLL TO TOP */}
+      {/* IMPORTANT: This must be OUTSIDE <Routes> */}
+      <ScrollToTop />
+
       {/* ROUTES */}
       <Routes>
 
@@ -213,6 +219,12 @@ function App() {
         <Route
           path="/blog/:id"
           element={<BlogDetailPage />}
+        />
+
+        {/* TESTIMONIALS */}
+        <Route
+          path="/testimonials"
+          element={<Testimonials />}
         />
 
         {/* CONTACT */}

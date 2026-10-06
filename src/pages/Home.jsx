@@ -2,8 +2,8 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import VideoSection from "../components/VideoSection";
 import Products from "../components/Products";
-import PromoBanner from "../components/PromoBanner";
-import Contact from "../components/Contact";
+import Testimonials from "../pages/Testimonials";
+import FAQ from "./FAQ";
 
 import useScrollReveal from "../hooks/useScrollReveal";
 
@@ -23,11 +23,11 @@ function Home({ onAddToCart }) {
         onAddToCart={onAddToCart}
       />
 
-    
+     
 
-      <PromoBanner />
+      <Testimonials />
 
-      <Contact />
+      <FAQ />
 
     </main>
   );
