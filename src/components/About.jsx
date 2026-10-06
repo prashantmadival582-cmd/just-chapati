@@ -1,60 +1,151 @@
+
 import { Link } from "react-router-dom";
 import aboutImage from "../assets/about-chapati.png";
 
-function About() {
+const reasons = [
+  {
+    number: "01",
+    title: "Homemade Goodness",
+    text: "Taste that reminds you of the comfort and warmth of home.",
+  },
+  {
+    number: "02",
+    title: "Fresh Every Day",
+    text: "We focus on freshness and quality in everything we prepare.",
+  },
+  {
+    number: "03",
+    title: "Easy & Convenient",
+    text: "Enjoy delicious food without spending hours in the kitchen.",
+  },
+  {
+    number: "04",
+    title: "Made With Care",
+    text: "Every product receives attention to quality and preparation.",
+  },
+];
+  
+  function About() {
   return (
     <section className="about-section" id="about">
-      <div className="container about-container">
 
-        {/* About Image */}
-        <div className="about-image reveal-left">
-          <img
-            src={aboutImage}
-            alt="Fresh traditional Indian food"
-            loading="lazy"
-          />
+      <div className="container">
 
-          <div className="experience-card">
-            <strong>100%</strong>
+        {/* STORY */}
+        <div className="about-container">
 
-            <span>
-              Homemade
-              <br />
-              Taste
-            </span>
+          <div className="about-image reveal-left">
+
+            <div className="image-wrapper">
+              <img
+                src={aboutImage}
+                alt="Fresh homemade Indian food"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="experience-card">
+              <span className="badge-number">100%</span>
+
+              <span className="badge-text">
+                Made with
+                <br />
+                love
+              </span>
+            </div>
+
           </div>
+
+
+          <div className="about-content reveal-right">
+
+            <span className="section-label">
+              OUR STORY
+            </span>
+
+            <h1>
+              Food that feels
+              <br />
+              <em>like home.</em>
+            </h1>
+
+            <p className="about-lead">
+              Some food is more than just a meal. It brings back memories,
+              brings people together, and makes an ordinary day feel special.
+            </p>
+
+            <p>
+              At Just Chapati, we bring that feeling to your everyday table.
+              From soft chapatis and flaky parottas to traditional favourites,
+              every product is made with care, freshness and a love for
+              authentic taste.
+            </p>
+
+            <Link to="/contact" className="text-btn">
+              <span>Discover Our Story</span>
+              <span>↗</span>
+            </Link>
+
+          </div>
+
         </div>
 
-        {/* About Content */}
-        <div className="about-content reveal-right">
-          <span className="section-label">
-            OUR STORY
-          </span>
 
-          <h2>
-            The Taste of Home,
-            <br />
-            <span>Made Simple.</span>
-          </h2>
+        {/* WHY US */}
+        <div className="about-why">
 
-          <p>
-            At Just Chapati, we believe that good food should feel like home.
-            Our goal is to bring fresh, delicious and convenient Indian food
-            to your everyday table.
-          </p>
+          <div className="about-why-heading reveal">
 
-          <p>
-            From soft chapatis to delicious parottas and traditional
-            idiyappam, every product is prepared with care and attention
-            to quality.
-          </p>
+            <div>
+              <span className="section-label">
+                WHY JUST CHAPATI
+              </span>
 
-          <Link to="/contact" className="text-btn">
-            Discover Our Story →
-          </Link>
+              <h2>
+                Simple food.
+                <br />
+                <em>Beautifully made.</em>
+              </h2>
+            </div>
+
+            <p>
+              We keep things simple — honest ingredients, thoughtful
+              preparation and the familiar taste of food made with care.
+            </p>
+
+          </div>
+
+
+          <div className="why-grid">
+
+            {reasons.map((reason) => (
+              <article
+                className="why-item stagger-item"
+                key={reason.number}
+              >
+
+                <span className="why-number">
+                  {reason.number}
+                </span>
+
+                <div className="why-content">
+                  <h3>{reason.title}</h3>
+                  <p>{reason.text}</p>
+                </div>
+
+                <span className="reason-arrow">
+                  ↗
+                </span>
+
+              </article>
+            ))}
+
+          </div>
+
         </div>
 
       </div>
+
     </section>
   );
 }

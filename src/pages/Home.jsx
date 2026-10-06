@@ -2,7 +2,6 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import VideoSection from "../components/VideoSection";
 import Products from "../components/Products";
-import WhyChooseUs from "../components/WhyChooseUs";
 import PromoBanner from "../components/PromoBanner";
 import Contact from "../components/Contact";
 
@@ -24,7 +23,7 @@ function Home({ onAddToCart }) {
         onAddToCart={onAddToCart}
       />
 
-      <WhyChooseUs />
+    
 
       <PromoBanner />
 

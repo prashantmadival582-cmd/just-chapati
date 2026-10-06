@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import chapatiImage from "../assets/chapati.webp";
+import chapatiImage from "../assets/hero-chapati.png";
 
 function Hero() {
   return (

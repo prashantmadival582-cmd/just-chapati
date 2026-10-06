@@ -1,14 +1,14 @@
-import WhyChooseUs from "../components/WhyChooseUs";
+import About from "../components/About";
 import useScrollReveal from "../hooks/useScrollReveal";
 
-function WhyUsPage() {
+function AboutPage() {
   useScrollReveal();
 
   return (
-    <main className="why-us-page">
-      <WhyChooseUs />
+    <main className="about-page">
+      <About />
     </main>
   );
 }
 
-export default WhyUsPage;
+export default AboutPage;

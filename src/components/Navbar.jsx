@@ -111,13 +111,7 @@ function Navbar({ cartCount = 0 }) {
             About
           </NavLink>
 
-          <NavLink
-            to="/why-us"
-            className={navLinkClass}
-            onClick={closeNavigation}
-          >
-            Why Us
-          </NavLink>
+          
 
           <NavLink
             to="/blog"

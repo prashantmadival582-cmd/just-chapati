@@ -7,12 +7,11 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import AboutPage from "./pages/AboutPage";
-import WhyUsPage from "./pages/WhyUsPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import ContactPage from "./pages/ContactPage";
-import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   /* =====================================================
@@ -21,19 +20,14 @@ function App() {
 
   const [cartItems, setCartItems] = useState(() => {
     try {
-      const savedCart = localStorage.getItem(
-        "just-chapati-cart"
-      );
+      const savedCart = localStorage.getItem("just-chapati-cart");
 
-      return savedCart
-        ? JSON.parse(savedCart)
-        : [];
+      return savedCart ? JSON.parse(savedCart) : [];
     } catch (error) {
       console.error("Error loading cart:", error);
       return [];
     }
   });
-
 
   /* =====================================================
      SAVE CART TO LOCAL STORAGE
@@ -50,7 +44,6 @@ function App() {
     }
   }, [cartItems]);
 
-
   /* =====================================================
      ADD TO CART
      ===================================================== */
@@ -65,9 +58,9 @@ function App() {
         return previousItems.map((item) =>
           item.id === product.id
             ? {
-              ...item,
-              quantity: item.quantity + 1,
-            }
+                ...item,
+                quantity: item.quantity + 1,
+              }
             : item
         );
       }
@@ -82,7 +75,6 @@ function App() {
     });
   };
 
-
   /* =====================================================
      INCREASE QUANTITY
      ===================================================== */
@@ -92,14 +84,13 @@ function App() {
       previousItems.map((item) =>
         item.id === productId
           ? {
-            ...item,
-            quantity: item.quantity + 1,
-          }
+              ...item,
+              quantity: item.quantity + 1,
+            }
           : item
       )
     );
   };
-
 
   /* =====================================================
      DECREASE QUANTITY
@@ -111,15 +102,14 @@ function App() {
         .map((item) =>
           item.id === productId
             ? {
-              ...item,
-              quantity: item.quantity - 1,
-            }
+                ...item,
+                quantity: item.quantity - 1,
+              }
             : item
         )
         .filter((item) => item.quantity > 0)
     );
   };
-
 
   /* =====================================================
      REMOVE FROM CART
@@ -133,7 +123,6 @@ function App() {
     );
   };
 
-
   /* =====================================================
      CLEAR CART
      ===================================================== */
@@ -141,7 +130,6 @@ function App() {
   const handleClearCart = () => {
     setCartItems([]);
   };
-
 
   /* =====================================================
      TOTAL CART QUANTITY
@@ -152,7 +140,6 @@ function App() {
     0
   );
 
-
   /* =====================================================
      APP
      ===================================================== */
@@ -160,16 +147,12 @@ function App() {
   return (
     <>
       {/* GLOBAL NAVBAR */}
-
       <Navbar cartCount={cartCount} />
 
-
       {/* ROUTES */}
-
       <Routes>
 
         {/* HOME */}
-
         <Route
           path="/"
           element={
@@ -179,9 +162,7 @@ function App() {
           }
         />
 
-
         {/* PRODUCTS */}
-
         <Route
           path="/products"
           element={
@@ -191,9 +172,7 @@ function App() {
           }
         />
 
-
         {/* CART */}
-
         <Route
           path="/cart"
           element={
@@ -207,7 +186,7 @@ function App() {
           }
         />
 
-          {/* checkout */}
+        {/* CHECKOUT */}
         <Route
           path="/checkout"
           element={
@@ -218,41 +197,25 @@ function App() {
           }
         />
 
-
         {/* ABOUT */}
-
         <Route
           path="/about"
           element={<AboutPage />}
         />
 
-
-        {/* WHY US */}
-
-        <Route
-          path="/why-us"
-          element={<WhyUsPage />}
-        />
-
-
         {/* BLOG */}
-
         <Route
           path="/blog"
           element={<BlogPage />}
         />
 
-
         {/* BLOG DETAIL */}
-
         <Route
           path="/blog/:id"
           element={<BlogDetailPage />}
         />
 
-
         {/* CONTACT */}
-
         <Route
           path="/contact"
           element={<ContactPage />}
@@ -260,9 +223,7 @@ function App() {
 
       </Routes>
 
-
       {/* GLOBAL FOOTER */}
-
       <Footer />
     </>
   );
